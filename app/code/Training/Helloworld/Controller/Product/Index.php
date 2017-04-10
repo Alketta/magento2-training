@@ -2,19 +2,25 @@
 
 namespace Training\Helloworld\Controller\Product;
 
-
-
+/**
+ * Action: Product/Index
+ */
 class Index extends \Magento\Framework\App\Action\Action {
 
 
     public function __construct(
         \Magento\Framework\App\Action\Context $context,
         \Magento\Catalog\Model\ProductFactory $productFactory
-    ){
+    ) {
         $this->productFactory = $productFactory;
         parent::__construct($context);
     }
 
+    /**
+     * Get the asked product
+     *
+     * @return \Magento\Catalog\Model\Product|null
+     */
     public function getAskedProduct()
     {
         $id = (int) $this->getRequest()->getParam('id');
@@ -31,6 +37,11 @@ class Index extends \Magento\Framework\App\Action\Action {
         return $product;
     }
 
+    /**
+     * Execute the action
+     *
+     * @return void
+     */
     public function execute()
     {
         $product = $this->getAskedProduct();
@@ -40,4 +51,5 @@ class Index extends \Magento\Framework\App\Action\Action {
         }
         $this->getResponse()->appendBody('Product: ' .$product->getName());
     }
+    
 }

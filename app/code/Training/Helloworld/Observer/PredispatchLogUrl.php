@@ -5,13 +5,19 @@ namespace Training\Helloworld\Observer;
 use Magento\Framework\Event\Observer;
 use Magento\Framework\Event\ObserverInterface;
 
+/**
+ * Observer PredispatchLogUrl
+ *
+ * @author    Laurent MINGUET <lamin@smile.fr>
+ * @copyright 2016 Smile
+ */
 class PredispatchLogUrl implements ObserverInterface {
-
     /**
      * Object logger
      * @var \Psr\Log\LoggerInterface
      */
     protected $logger;
+
     /**
      * PredispatchLogUrl constructor.
      *
