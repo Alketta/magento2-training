@@ -23,12 +23,13 @@ class Index extends \Magento\Framework\App\Action\Action {
      */
     public function getAskedProduct()
     {
-        $id = (int) $this->getRequest()->getParam('id');
-        if (!$id){
+        $productId = (int) $this->getRequest()->getParam('id');
+        if (!$productId){
             return null;
         }
 
-        $product = $this->productFactory->create()->load($id);
+        $product = $this->productFactory->create();
+        $product->getResource()->load($product, $productId);
 
         if (!$product->getId()) {
             return null;
