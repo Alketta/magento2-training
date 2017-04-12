@@ -42,7 +42,7 @@ interface SellerRepositoryInterface {
      *
      * @return \Training\Seller\Api\Data\SellerSearchResultsInterface
      */
-    public function getList(SearchCriteriaInterface $searchCriteria);
+    public function getList(SearchCriteriaInterface $searchCriteria = null);
 
     /**
      * Save a seller
