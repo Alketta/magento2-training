@@ -21,8 +21,8 @@ interface SellerInterface {
     const FIELD_SELLER_ID  = 'seller_id';
     const FIELD_IDENTIFIER = 'identifier';
     const FIELD_NAME       = 'name';
-    const FILED_UPDATED_AT = 'updated_at';
-    const FILED_CREATED_AT = 'created_at';
+    const FIELD_UPDATED_AT = 'updated_at';
+    const FIELD_CREATED_AT = 'created_at';
 
     /**
      * Get field: seller_id
