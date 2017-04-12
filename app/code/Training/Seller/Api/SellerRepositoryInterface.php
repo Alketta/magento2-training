@@ -40,7 +40,7 @@ interface SellerRepositoryInterface {
      *
      * @param \Magento\Framework\Api\SearchCriteriaInterface $searchCriteria
      *
-     * @return ??????????
+     * @return \Training\Seller\Api\Data\SellerSearchResultsInterface
      */
     public function getList(SearchCriteriaInterface $searchCriteria);
 
@@ -66,7 +66,7 @@ interface SellerRepositoryInterface {
      *
      * @throws \Magento\Framework\Exception\CouldNotDeleteException
      */
-    public function deletedByID($objectId);
+    public function deleteById($objectId);
 
     /**
      * Delete a seller by its identifier
@@ -79,6 +79,6 @@ interface SellerRepositoryInterface {
      *
      * @throws \Magento\Framework\Exception\CouldNotDeleteException
      */
-    public function deletedByIdentifier($objectIdentifier);
+    public function deleteByIdentifier($objectIdentifier);
 
 }

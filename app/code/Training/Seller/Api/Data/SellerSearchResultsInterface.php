@@ -20,11 +20,11 @@ interface SellerSearchResultsInterface extends SearchResultsInterface {
     public function getItems();
 
     /**
-     * Get seller list
+     * Set seller list
      *
      * @param \Training\Seller\Api\Data\SellerInterface[] $items
      *
-     * @return ???????????
+     * @return $this
      */
     public function setItems(array $items);
 }

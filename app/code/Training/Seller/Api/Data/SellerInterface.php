@@ -48,7 +48,7 @@ interface SellerInterface {
     /**
      * Get field: updated_at
      *
-     * @return string|null|
+     * @return string|null
      */
     public function getUpdatedAt();
 
