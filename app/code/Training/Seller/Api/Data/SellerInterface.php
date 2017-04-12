@@ -39,7 +39,7 @@ interface SellerInterface {
     public function getIdentifier();
 
     /**
-     *Get field: name
+     * Get field: name
      *
      * @return string
      */
