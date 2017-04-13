@@ -8,12 +8,12 @@ namespace Training\Seller\Block\Adminhtml\Seller\Edit;
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
 
 /**
- * Adminhtml block : Button Save
+ * Adminhtml block : Button Save and Continue
  *
  * @author    Laurent MINGUET <lamin@smile.fr>
  * @copyright 2016 Smile
  */
-class SaveButton extends AbstractButton implements ButtonProviderInterface
+class SaveAndContinueButton extends AbstractButton implements ButtonProviderInterface
 {
     /**
      * get the button data
@@ -23,13 +23,13 @@ class SaveButton extends AbstractButton implements ButtonProviderInterface
     public function getButtonData()
     {
         return [
-            'label'          => __('Save Seller'),
-            'class'          => 'save primary',
+            'label'          => __('Save and Continue Edit'),
+            'class'          => 'save',
             'data_attribute' => [
-                'mage-init' => ['button' => ['event' => 'save']],
+                'mage-init' => ['button' => ['event' => 'saveAndContinueEdit']],
                 'form-role' => 'save'
             ],
-            'sort_order'     => 90,
+            'sort_order'     => 80,
         ];
     }
 }
