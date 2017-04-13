@@ -70,6 +70,14 @@ class Seller extends AbstractModel implements SellerInterface, IdentityInterface
     /**
      * @inheritdoc
      */
+    public function getDescription()
+    {
+        return $this->getData(self::FIELD_DESCRIPTION);
+    }
+
+    /**
+     * @inheritdoc
+     */
     public function getUpdatedAt()
     {
         return (string) $this->getData(self::FIELD_UPDATED_AT);
@@ -105,6 +113,18 @@ class Seller extends AbstractModel implements SellerInterface, IdentityInterface
     public function setName($value)
     {
         return $this->setData(self::FIELD_NAME, (string) $value);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function setDescription($value)
+    {
+        if (!is_null($value)) {
+            $value = (string) $value;
+        }
+
+        return $this->setData(self::FIELD_DESCRIPTION, $value);
     }
 
     /**

@@ -18,11 +18,12 @@ interface SellerInterface {
     /**
      * Constants keys
      */
-    const FIELD_SELLER_ID  = 'seller_id';
-    const FIELD_IDENTIFIER = 'identifier';
-    const FIELD_NAME       = 'name';
-    const FIELD_UPDATED_AT = 'updated_at';
-    const FIELD_CREATED_AT = 'created_at';
+    const FIELD_SELLER_ID   = 'seller_id';
+    const FIELD_IDENTIFIER  = 'identifier';
+    const FIELD_NAME        = 'name';
+    const FIELD_DESCRIPTION ='description';
+    const FIELD_UPDATED_AT  = 'updated_at';
+    const FIELD_CREATED_AT  = 'created_at';
 
     /**
      * Get field: seller_id
@@ -45,6 +46,13 @@ interface SellerInterface {
      */
     public function getName();
 
+    /**
+     * Get field: description
+     *
+     * @return string|null
+     */
+    public function getDescription();
+    
     /**
      * Get field: updated_at
      *
@@ -86,6 +94,15 @@ interface SellerInterface {
      */
     public function setName($value);
 
+    /**
+     * Set field: description
+     *
+     * @param string|null $value
+     *
+     * @return SellerInterface
+     */
+    public function setDescription($value);
+    
     /**
      * Set field: updated_at
      *
