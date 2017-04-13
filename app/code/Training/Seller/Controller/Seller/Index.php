@@ -11,7 +11,7 @@ class Index extends AbstractAction {
     /**
      * Execute the action
      *
-     * @return void
+     * @return \Magento\Framework\View\Result\Page
      */
     public function execute()
     {
@@ -20,12 +20,14 @@ class Index extends AbstractAction {
         // get the list of the sellers
         $result = $this->sellerRepository->getList($searchCriteria);
 
-        // display the result
-        echo '<ul>';
-        foreach ($result->getItems() as $seller) {
-            echo '<li><a href="/seller/'.$seller->getIdentifier().'.html">'.$seller->getName().'</a></li>';
-        }
-        echo '</ul>';
+        // save it to the registry
+        $this->registry->register('seller_search_result', $result);
+
+        // display the page using the layout
+        $resultPage = $this->resultPageFactory->create();
+        $resultPage->getConfig()->getTitle()->set(__('Sellers'));
+
+        return $resultPage;
     }
 
     /**
@@ -35,7 +37,6 @@ class Index extends AbstractAction {
      */
     protected function getSearchCriteria()
     {
-        // build the criteria
         return $this->searchCriteriaBuilder->create();
     }
 
